@@ -1,7 +1,14 @@
-// Korgish by Codasign November 2012
- 
+/* Korgish_pencil
+  released by Codasign in November 2012
+  under GPL 3.0
 
-
+  CIRCUIT:
+  speaker on pin 5
+  
+  3 analog inputs on pins A0, A4, A5 with 1M+ Ohm tied to 5V
+  and pencil drawings
+  
+*/
 
 int speakerPin = 5; //buzzer connected to digital pin 5
 

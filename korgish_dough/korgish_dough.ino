@@ -1,7 +1,14 @@
-// Korgish by Codasign November 2012
- 
+/* Korgish_dough
+  released by Codasign in November 2012
+  under GPL 3.0
 
-
+  CIRCUIT:
+  speaker on pin 5
+  
+  3 analog inputs that are voltage dividers from 0 to 5V
+  on pins A2, A4, A5
+  
+*/
 
 int speakerPin = 5; //buzzer connected to digital pin 5
 

@@ -1,29 +1,26 @@
-/*
-  Pitch follower
- 
- Plays a pitch that changes based on a changing analog input
- 
- circuit:
- * 8-ohm speaker on digital pin 8
- * photoresistor on analog 0 to 5V
- * 4.7K resistor on analog 0 to ground
- 
- created 21 Jan 2010
- modified 9 Apr 2012
- by Tom Igoe 
+/* squishy_dough
+  released by Codasign in November 2012
+  under GPL 3.0
 
-This example code is in the public domain.
- 
- http://arduino.cc/en/Tutorial/Tone2
- 
- */
+  CIRCUIT:
+  speaker on pin 8
+  
+  1 analog input that is a voltage divider from 0 to 5V
+  on pin A0
+  
+*/
 
-
+/****************************************
+ * setup
+ *****************************************/
 void setup() {
   // initialize serial communications (for debugging only):
   Serial.begin(9600);
 }
 
+/****************************************
+ * loop
+ *****************************************/
 void loop() {
   // read the sensor:
   int sensorReading = analogRead(A0);

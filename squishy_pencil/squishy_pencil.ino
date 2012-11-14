@@ -1,15 +1,28 @@
-/*
-See
-  http://www.instructables.com/id/Turn-a-pencil-drawing-into-a-capacitive-sensor-for/
- */
+/* squishy_pencil
+  released by Codasign in November 2012
+  under GPL 3.0
+
+  CIRCUIT:
+  speaker on pin 8
+  
+  1 analog input on pin A0 with 1M+ Ohm tied to 5V
+  and pencil drawing
+  
+*/
 
 int capSensePin = 2;
 
+/****************************************
+ * setup
+ *****************************************/
 void setup() {
   // initialize serial communications (for debugging only):
   Serial.begin(9600);
 }
 
+/****************************************
+ * loop
+ *****************************************/
 void loop() {
   // read the sensor:
   int capValue = readCapacitivePin(capSensePin);
