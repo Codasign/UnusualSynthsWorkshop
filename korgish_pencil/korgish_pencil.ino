@@ -1,14 +1,16 @@
 /* Korgish_pencil
-  released by Codasign in November 2012
-  under GPL 3.0
-
-  CIRCUIT:
-  speaker on pin 5
-  
-  3 analog inputs on pins A0, A4, A5 with 1M+ Ohm tied to 5V
-  and pencil drawings
-  
-*/
+ released by Codasign in November 2012
+ under GPL 3.0
+ 
+ CIRCUIT:
+ speaker on pin 5
+ 
+ on/off swith on pin 12
+ 
+ 3 analog inputs on pins A0, A4, A5 with 1M+ Ohm tied to 5V
+ and pencil drawings
+ 
+ */
 
 int speakerPin = 5; //buzzer connected to digital pin 5
 
@@ -16,7 +18,7 @@ int sensorA = 19; // analog pin a5, controls repeating notes
 int sensorB = 18; // analog pin a4, controls the frequency of the notes
 int sensorC = 16; // analog pin a2, controls the duration of the notes
 
-int onSwitchPin = 6; //turns sound on and off
+int onSwitchPin = 12; //turns sound on and off
 
 int sensorAValue; //variable to store the value coming from first pressuse sensor
 int sensorBValue; //variable to store the value coming from second pressure sensor
@@ -33,6 +35,8 @@ void setup()
   digitalWrite(18, HIGH); //sets analog pin a4 to high
   digitalWrite(19, HIGH); //sets analog pin a5 to high
 
+  pinMode(onSwitchPin, INPUT_PULLUP);
+
 }
 
 /****************************************
@@ -41,7 +45,7 @@ void setup()
 void loop() {
   int onSwitch = digitalRead(onSwitchPin);
 
-  if ( onSwitch ){
+  if ( onSwitch == 0 ){
     // repeats
     sensorAValue = analogRead(sensorA); // read the value from the sensor
     Serial.print("sensor A: ");
@@ -73,3 +77,4 @@ void loop() {
     }
   }
 }
+

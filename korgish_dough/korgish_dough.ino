@@ -5,18 +5,20 @@
   CIRCUIT:
   speaker on pin 5
   
+  on/off switch on pin 12
+  
   3 analog inputs that are voltage dividers from 0 to 5V
   on pins A2, A4, A5
   
 */
 
-int speakerPin = 5; //buzzer connected to digital pin 5
+int speakerPin = 5; 
 
 int sensorA = 19; // analog pin a5, controls repeating notes
 int sensorB = 18; // analog pin a4, controls the frequency of the notes
 int sensorC = 16; // analog pin a2, controls the duration of the notes
 
-int onSwitchPin = 6; //turns sound on and off
+int onSwitchPin = 12; //turns sound on and off
 
 int sensorAValue; //variable to store the value coming from first pressuse sensor
 int sensorBValue; //variable to store the value coming from second pressure sensor
@@ -32,6 +34,8 @@ void setup()
   digitalWrite(16, HIGH); //sets analog pin a2 to high
   digitalWrite(18, HIGH); //sets analog pin a4 to high
   digitalWrite(19, HIGH); //sets analog pin a5 to high
+  
+  pinMode(onSwitchPin, INPUT_PULLUP);
 
 }
 
@@ -41,7 +45,7 @@ void setup()
 void loop() {
   int onSwitch = digitalRead(onSwitchPin);
 
-  if ( onSwitch ){
+  if ( onSwitch == 0 ){
     // repeats
     sensorAValue = analogRead(sensorA); // read the value from the sensor
     Serial.print("sensor A: ");
